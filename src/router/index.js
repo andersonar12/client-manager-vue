@@ -6,7 +6,7 @@ import Main from "../views/main/Main.vue";
 
 const routes = [
   {
-    path: "/",
+    path: "/login",
     name: "Login",
     component: Login,
   },
@@ -21,10 +21,15 @@ const routes = [
       { path: "about", component: About },
     ],
   },
+  {
+    path: "/",
+    redirect: "/login",
+  },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
+  linkActiveClass: "active",
   routes,
 });
 

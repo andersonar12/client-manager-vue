@@ -1,7 +1,9 @@
-<template lang="html">
+<template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar scroll</a>
+      <a class="navbar-brand">
+        <img :src="require('@/assets/logo.png')" width="30"
+      /></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -19,37 +21,15 @@
           style="--bs-scroll-height: 100px"
         >
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <router-link class="nav-link" active-link="active" to="/main/home"
+              ><strong>Home</strong>
+            </router-link>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarScrollingDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Link
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link disabled"
-              href="#"
-              tabindex="-1"
-              aria-disabled="true"
-              >Link</a
-            >
+            <router-link class="nav-link" active-link="active" to="/main/about"
+              ><strong>Acerca de</strong>
+            </router-link>
           </li>
         </ul>
         <form class="d-flex">
@@ -69,23 +49,10 @@
   </nav>
 </template>
 
-<script lang="js">
-
-  export default  {
-    name: 'Navbar',
-    props: [],
-    mounted () {
-
-    },
-    data () {
-      return {
-
-      }
-    },
-    methods: {
-
-    },
-}
+<script>
+export default {
+  name: "Navbar",
+};
 </script>
 
 <style scoped lang="scss"></style>
