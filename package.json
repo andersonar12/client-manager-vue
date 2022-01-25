@@ -10,9 +10,11 @@
   "dependencies": {
     "axios": "^0.25.0",
     "core-js": "^3.6.5",
+    "moment": "^2.29.1",
     "sweetalert2": "^11.3.6",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
+    "vue3-date-time-picker": "^2.4.4",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
@@ -44,7 +46,10 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "no-unused-vars": "off",
+      "no-debugger": "off"
+    }
   },
   "browserslist": [
     "> 1%",

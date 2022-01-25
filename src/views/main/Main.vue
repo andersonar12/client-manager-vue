@@ -1,7 +1,9 @@
 <template>
   <section class="main">
     <Navbar></Navbar>
-    <router-view />
+    <div class="container-fluid">
+      <router-view />
+    </div>
   </section>
 </template>
 

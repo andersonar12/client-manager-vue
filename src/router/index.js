@@ -3,7 +3,7 @@ import Login from "../views/login/Login.vue";
 import Home from "../views/main/home/Home.vue";
 import About from "../views/main/about/About.vue";
 import Main from "../views/main/Main.vue";
-
+import Client from "../views/client/Client.vue";
 const routes = [
   {
     path: "/login",
@@ -17,8 +17,9 @@ const routes = [
       // UserHome will be rendered inside User's <router-view>
       // when /user/:id is matched
       // { path: '', component: UserHome },
-      { path: "home", component: Home },
-      { path: "about", component: About },
+      { name: "Home", path: "home", component: Home },
+      { name: "About", path: "about", component: About },
+      { name: "Client", path: "client/:id/:data?", component: Client },
     ],
   },
   {
