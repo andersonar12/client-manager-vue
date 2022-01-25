@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Login from "../views/login/Login.vue";
 import Home from "../views/main/home/Home.vue";
-import About from "../views/main/about/About.vue";
+import Reactive from "../views/main/reactive/Reactive.vue";
 import Main from "../views/main/Main.vue";
-import Client from "../views/client/Client.vue";
+import Client from "../views/main/client/Client.vue";
+import Map from "../views/main/map/Map.vue";
 const routes = [
   {
     path: "/login",
@@ -17,8 +18,10 @@ const routes = [
       // UserHome will be rendered inside User's <router-view>
       // when /user/:id is matched
       // { path: '', component: UserHome },
+      { path: "", component: Home },
       { name: "Home", path: "home", component: Home },
-      { name: "About", path: "about", component: About },
+      { name: "Map", path: "map", component: Map },
+      { name: "Reactive", path: "reactive", component: Reactive },
       { name: "Client", path: "client/:id/:data?", component: Client },
     ],
   },

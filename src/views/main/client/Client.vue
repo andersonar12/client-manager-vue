@@ -64,7 +64,7 @@ import { useStore } from "vuex";
 import { computed, onMounted, onUnmounted } from "@vue/runtime-core";
 import { useRouter, useRoute } from "vue-router";
 import { ref } from "vue";
-import loader from "../../utils/loader.js";
+import loader from "@/utils/loader.js";
 import moment from "moment";
 import Datepicker from "vue3-date-time-picker";
 import "vue3-date-time-picker/dist/main.css";

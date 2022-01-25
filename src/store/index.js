@@ -4,23 +4,26 @@ import API from "../api/service.js";
 export default createStore({
   state: {
     clients: {},
-    //Para el manejo de errores del formulario
+    //Para el manejo de errores del formulario en en View->Client (solo fue por motivo de pruebas)
     errors: [],
+    users: [],
   },
   mutations: {
     GET_CLIENTS(state, { clients }) {
       state.clients = { ...clients };
-    } /* 
-    SET_CLIENTS(state, { client }) {
-      state.clients = {...state.clients,...client};
-    }, */,
+    },
     //Para el manejo de errores del formulario
-
     SET_ERRORS(state, { error }) {
       state.errors.push(error);
     },
     RESET_ERRORS(state) {
       state.errors = [];
+    },
+    SET_CUSTOM_STATE(state, { attribute, value }) {
+      state[attribute] = value;
+    },
+    DELETE_ATTR_STATE(state, { attribute }) {
+      delete state[attribute];
     },
   },
   actions: {

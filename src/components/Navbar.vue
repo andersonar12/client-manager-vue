@@ -27,8 +27,17 @@
           </li>
 
           <li class="nav-item">
-            <router-link class="nav-link" active-link="active" to="/main/about"
-              ><strong>Acerca de</strong>
+            <router-link class="nav-link" active-link="active" to="/main/map"
+              ><strong>Mapa</strong>
+            </router-link>
+          </li>
+
+          <li class="nav-item">
+            <router-link
+              class="nav-link"
+              active-link="active"
+              to="/main/reactive"
+              ><strong>Reactividad</strong>
             </router-link>
           </li>
         </ul>
