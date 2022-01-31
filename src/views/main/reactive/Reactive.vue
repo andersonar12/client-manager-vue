@@ -11,7 +11,7 @@
   <button class="btn btn-dark" @click="removeUsersFromStore()">Vaciar</button>
   <ul v-if="users">
     <li v-for="(user, index) in users" :key="index" class="text-start">
-      <strong>{{ user.name }}</strong> ({{ user.email }})
+      <strong>{{ user["name"] }}</strong> ({{ user["email"] }})
       <button @click="deleteItem(index)" type="button">X</button>
     </li>
   </ul>

@@ -90,3 +90,11 @@ a {
   color: black;
   text-decoration: none;
 }
+
+//Background Overlay Modal
+:root {
+  .g-dialog-overlay {
+    --overlay-bg: #3e2a2a4a !important;
+    backdrop-filter: blur(10px) !important;
+  }
+}

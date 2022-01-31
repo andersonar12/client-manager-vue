@@ -11,10 +11,13 @@
     "@fawmi/vue-google-maps": "^0.9.4",
     "axios": "^0.25.0",
     "core-js": "^3.6.5",
+    "gitart-vue-dialog": "^1.2.3",
     "moment": "^2.29.1",
     "sweetalert2": "^11.3.6",
+    "vee-validate": "^4.5.8",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
+    "vue3-carousel": "^0.1.36",
     "vue3-date-time-picker": "^2.4.4",
     "vuex": "^4.0.0-0"
   },

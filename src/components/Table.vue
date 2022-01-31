@@ -15,41 +15,42 @@
       <tr
         v-for="(client, i) in clients"
         :key="i"
-        :class="checkUserDays(client.dateEnd) <= 0 ? 'table-danger' : ''"
+        :class="checkUserDays(client['dateEnd']) <= 0 ? 'table-danger' : ''"
       >
         <th scope="row"></th>
-        <td>{{ client.name }}</td>
-        <td>{{ client.macAddress }}</td>
-        <td>{{ formatDate(client.dateStart) }}</td>
-        <td>{{ formatDate(client.dateEnd) }}</td>
+        <td>{{ client["name"] }}</td>
+        <td>{{ client["macAddress"] }}</td>
+        <td>{{ formatDate(client["dateStart"]) }}</td>
+        <td>{{ formatDate(client["dateEnd"]) }}</td>
         <td>
           <div class="btn-group" role="group">
             <button
               type="button"
-              class="btn btn-primary"
+              class="btn btn-primary d-flex align-items-center"
               @click="editClient(i, client)"
             >
               Editar
+              <span class="ms-2 material-icons"> assignment_turned_in </span>
             </button>
             <button
               type="button"
               @click="deleteClient(i, client)"
-              class="btn btn-success"
+              class="btn btn-success d-flex align-items-center"
             >
-              Eliminar
+              Eliminar <span class="ms-2 material-icons"> delete </span>
             </button>
           </div>
         </td>
         <td>
           <span
             class="material-icons fs-2"
-            v-if="checkUserDays(client.dateEnd) > 0"
+            v-if="checkUserDays(client['dateEnd']) > 0"
           >
             check_circle
           </span>
           <span
             class="material-icons fs-2"
-            v-if="checkUserDays(client.dateEnd) <= 0"
+            v-if="checkUserDays(client['dateEnd']) <= 0"
           >
             info
           </span>
@@ -109,7 +110,6 @@ export default {
     const checkUserDays = (date) => {
       let today = new Date().getTime();
       let dateRegistered = new Date(date).getTime();
-      /* console.log(date2.diff(date1, "days"), "diferencia"); */
       return dateRegistered - today;
     };
 

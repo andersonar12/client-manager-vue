@@ -40,18 +40,36 @@
               ><strong>Reactividad</strong>
             </router-link>
           </li>
+
+          <li class="nav-item">
+            <router-link class="nav-link" active-link="active" to="/main/info"
+              ><strong>Info</strong>
+            </router-link>
+          </li>
         </ul>
-        <router-link class="btn btn-outline-danger ms-2" to="/"
-          >Cerrar Sesion</router-link
-        >
+        <button class="btn btn-outline-danger ms-2" @click="logout()">
+          Cerrar Sesion
+        </button>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
+import { useRouter } from "vue-router";
+import { useStore } from "vuex";
 export default {
   name: "Navbar",
+  setup() {
+    const router = useRouter();
+    const store = useStore();
+    const logout = () => {
+      store.commit("DEL_TOKEN");
+      router.push({ name: "Login" });
+    };
+
+    return { logout };
+  },
 };
 </script>
 
