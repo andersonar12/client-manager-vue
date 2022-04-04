@@ -4,16 +4,16 @@
       <div class="col-4">
         <img :src="require('@/assets/logo.png')" alt="" />
         <h1>Client Manager</h1>
-        <Form @submit="onSubmit">
-          <label>Correo Electronico</label>
-          <Field
-            name="email"
-            type="email"
-            placeholder="Correo Electronico"
-            class="form-control"
-            :rules="validateEmail"
-            v-model="email"
-          />
+              <Form @submit="onSubmit">
+                <label>Correo Electronico</label>
+                <Field
+                  name="email"
+                  type="email"
+                  placeholder="Correo Electronico"
+                  class="form-control"
+                  :rules="validateEmail"
+                  v-model="email"
+                />
           <p class="text-danger">
             <strong><ErrorMessage name="email" /></strong>
           </p>

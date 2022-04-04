@@ -1,9 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand">
-        <img :src="require('@/assets/logo.png')" width="30"
-      /></a>
+      <a class="navbar-brand"> <img :src="require('@/assets/logo.png')" width="30" /></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -16,61 +14,47 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarScroll">
-        <ul
-          class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-          style="--bs-scroll-height: 100px"
-        >
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px">
           <li class="nav-item">
-            <router-link class="nav-link" active-link="active" to="/main/home"
-              ><strong>Home</strong>
-            </router-link>
+            <router-link class="nav-link" active-link="active" to="/main/home"><strong>Home</strong> </router-link>
           </li>
 
           <li class="nav-item">
-            <router-link class="nav-link" active-link="active" to="/main/map"
-              ><strong>Mapa</strong>
-            </router-link>
+            <router-link class="nav-link" active-link="active" to="/main/map"><strong>Mapa</strong> </router-link>
           </li>
 
           <li class="nav-item">
-            <router-link
-              class="nav-link"
-              active-link="active"
-              to="/main/reactive"
+            <router-link class="nav-link" active-link="active" to="/main/reactive"
               ><strong>Reactividad</strong>
             </router-link>
           </li>
 
           <li class="nav-item">
-            <router-link class="nav-link" active-link="active" to="/main/info"
-              ><strong>Info</strong>
-            </router-link>
+            <router-link class="nav-link" active-link="active" to="/main/info"><strong>Info</strong> </router-link>
           </li>
         </ul>
-        <button class="btn btn-outline-danger ms-2" @click="logout()">
-          Cerrar Sesion
-        </button>
+        <button class="btn btn-outline-danger ms-2" @click="logout()">Cerrar Sesion</button>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
-import { useRouter } from "vue-router";
-import { useStore } from "vuex";
+import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
 export default {
-  name: "Navbar",
+  name: 'Navbar',
   setup() {
-    const router = useRouter();
-    const store = useStore();
+    const router = useRouter()
+    const store = useStore()
     const logout = () => {
-      store.commit("DEL_TOKEN");
-      router.push({ name: "Login" });
-    };
+      store.commit('DEL_TOKEN')
+      router.push({ name: 'Login' })
+    }
 
-    return { logout };
-  },
-};
+    return { logout }
+  }
+}
 </script>
 
 <style scoped lang="scss"></style>
