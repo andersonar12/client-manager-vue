@@ -15,14 +15,14 @@
 <script>
 import { ref } from 'vue'
 import { useStore } from 'vuex'
+import { getUsersJSON } from '../../../services/user-service.js'
 export default {
   setup() {
     const store = useStore()
     let users = ref(store.state.users)
     //Functions
     const fetchAllUsers = () => {
-      fetch('https://jsonplaceholder.typicode.com/users/')
-        .then(response => response.json())
+      getUsersJSON() 
         .then(json => {
           console.log(json)
           users.value = [...users.value, ...json]

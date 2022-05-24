@@ -1,4 +1,4 @@
-import { http } from '../../api/axiosConfig.js'
+import { http } from '../../axios/axiosConfig.js'
 
 /* const API = {
   getClients() {
@@ -19,10 +19,14 @@ import { http } from '../../api/axiosConfig.js'
 
 export const actions = {
   getClients: async ({ commit }) => {
-    await http.get('clients/.json').then(res => {
-      console.log(res.data)
-      commit('GET_CLIENTS', { clients: res.data })
-    })
+    //Una forma de generar un peticion con Axios
+    try {
+      const { data } = await http.get('clients/.json')
+      console.log(data)
+      commit('GET_CLIENTS', { clients: data })
+    } catch (error) {
+      console.log(error)
+    }
   },
   addClient: async ({ commit }, data) => {
     await http.post('clients/.json', data).then(res => {
@@ -44,3 +48,4 @@ export const actions = {
     })
   }
 }
+

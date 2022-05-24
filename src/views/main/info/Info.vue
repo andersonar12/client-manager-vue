@@ -66,7 +66,7 @@ import { useStore } from 'vuex'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import Modal from '@/components/Modal.vue'
 import 'vue3-carousel/dist/carousel.css'
-
+import { getUsers } from '@/services/user-service'
 const settings = {
   itemsToShow: 4.5,
   itemsToScroll: 4,
@@ -90,12 +90,10 @@ export default {
     let itemsUsers = ref([])
 
     onMounted(() => {
-      fetch('https://reqres.in/api/users/')
-        .then(response => response.json())
-        .then(json => {
-          console.log(json)
-          itemsUsers.value.push(...json.data)
-        })
+      getUsers().then(json => {
+        console.log(json)
+        itemsUsers.value.push(...json.data)
+      })
     })
 
     const onOpen = dataUser => {
@@ -115,3 +113,4 @@ export default {
 }
 </script>
 <style lang=""></style>
+
